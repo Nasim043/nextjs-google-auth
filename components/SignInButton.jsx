@@ -1,12 +1,20 @@
+"use client";
+
+import { signIn } from "next-auth/react";
 import React from "react";
 import { FcGoogle } from "react-icons/fc";
 
 const SignInButton = () => {
   return (
-    <div className="flex justify-center items-center bg-blue-500 text-white rounded-md px-4 py-2">
-      <FcGoogle className="h-8 w-8 me-2"></FcGoogle>
-      <span>Sign In to Google</span>
-    </div>
+    <button
+      onClick={() => signIn("google")}
+      className="flex justify-center items-center"
+    >
+      <FcGoogle className="h-10 w-10 me-1 shadow-lg"></FcGoogle>
+      <span className="px-4 py-2 text-white bg-blue-500 rounded-r-md">
+        Sign In to Google
+      </span>
+    </button>
   );
 };
 
